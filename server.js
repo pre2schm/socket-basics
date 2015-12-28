@@ -10,11 +10,11 @@ io.on('connection', function (socket){
 	console.log('User connected via scoket.io!');
 
 	socket.on('message', function (message) {
-		console.log('Message recieved: ' + message.text)
+		console.log('Message recieved: ' + message.text);
 	
-	socket.broadcast.emit('message', message);
+		socket.broadcast.emit('message', message);
 
-	})
+	});
 
 	socket.emit('message', {
 		text: 'Welcome to chat application'
@@ -24,4 +24,4 @@ io.on('connection', function (socket){
 
 http.listen(PORT, function(){
 	console.log('server started!');
-})
+});
